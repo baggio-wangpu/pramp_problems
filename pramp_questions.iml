@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/questions/array-index-and-element-equality" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/array-of-array-products" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/array-quadruplet" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/award-budget-cuts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/basic-regex-parser" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/bracket-match" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/bst-successor-search" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/busiest-time-in-the-mall" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/decrypt-message" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/drone-flight-planner" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/find-the-duplicates" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/flatten-a-dictionary" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/getting-a-different-number" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/h-tree-construction" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/island-count" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/k-messed-array-sort" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/largest-smaller-bst-key" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/matrix-spiral-copy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/merging-2-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/pancake-sort" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/root-of-number" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/sales-path" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/sentence-reverse" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/shifted-array-search" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/smallest-substring-of-all-characters" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/sudoku-solver" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/time-planner" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/questions/word-count-engine" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
