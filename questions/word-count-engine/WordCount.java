@@ -32,8 +32,7 @@ public class WordCount {
     }
 
     public static void main(String[] args) {
-        String document = "Every book is a quotation; and every house is a quotation out of all forests, and mines, " +
-                "and stone quarries; and every man is a quotation from all his ancestors. ";
+        String document = "Practice makes perfect. you'll only get Perfect by practice. just practice!";
         String[][] res = wordCountEngine(document);
         for (int i = 0; i < res.length; i++) {
             System.out.print(res[i][0] + ": " + res[i][1] + " ");
