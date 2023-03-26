@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution {
+public class SmallestSubstring {
 
     /*
     input:  arr = ['x','y','z'], str = "xyyzyzyx"
