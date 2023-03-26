@@ -3,6 +3,16 @@ import java.util.List;
 
 public class SentenceReverse {
 
+    static void reverse(char[] chars, int from, int to) {
+        while (from < to) {
+            char tmp = chars[from];
+            chars[from] = chars[to];
+            chars[to] = tmp;
+            from++;
+            to--;
+        }
+    }
+
     /*
     char[] arr = { 'p', 'e', 'r', 'f', 'e', 'c', 't', ' ',
                 'm', 'a', 'k', 'e', 's', ' ',
@@ -13,6 +23,8 @@ public class SentenceReverse {
      */
     static char[] reverseWords(char[] arr) {
 
+        /*
+        // method1.
         // 1. split the sentences into words
         List<String> strs = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
@@ -37,6 +49,21 @@ public class SentenceReverse {
         // 3. add space and change into char[]
         String res = String.join(" ", strs);
         return res.toCharArray();
+        */
+        // method2
+        int start = 0, end = arr.length - 1;
+        reverse(arr, start, end);
+
+        int begin = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == ' ') {
+                reverse(arr, begin, i - 1);
+                begin = i + 1;
+            } else if (i == arr.length - 1) {
+                reverse(arr, begin, i);
+            }
+        }
+        return arr;
     }
 
     public static void main(String[] args) {
@@ -54,6 +81,14 @@ public class SentenceReverse {
         arr = new char[]{'w', 'i', 'n', ' ', 't', 'o', ' ',
                 'w', 'a', 'n', 't', ' ', 'y',
                 'o', 'u', ' ', 'i', 'f'};
+        result = reverseWords(arr);
+        for (char c : result) {
+            System.out.print("'" + c + "', ");
+        }
+        System.out.println();
+
+        // test case 3
+        arr = new char[] {'w', 'i', 'n', 'n', 'e', 'r'};
         result = reverseWords(arr);
         for (char c : result) {
             System.out.print("'" + c + "', ");
