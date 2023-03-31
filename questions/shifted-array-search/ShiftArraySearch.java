@@ -1,5 +1,5 @@
 public class ShiftArraySearch {
-
+    /*
     // find peak. same as https://leetcode.com/problems/find-peak-element
     static int searchPeak(int[] nums) {
         int l = 0, r = nums.length - 1;
@@ -12,6 +12,14 @@ public class ShiftArraySearch {
             }
         }
         return l;
+    }
+    */
+
+    private static int searchPeak(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i + 1] < nums[i]) return i; // find rotated point
+        }
+        return nums.length - 1;
     }
 
     // normal binary search
