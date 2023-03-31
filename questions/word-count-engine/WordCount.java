@@ -10,6 +10,7 @@ public class WordCount {
             ["get", "1"], ["by", "1"], ["just", "1"] ]
      */
 
+    // method1: O(nlogn)
     static String[][] wordCountEngine(String document) {
         String[] arrs = document.replaceAll("[,.:;'?!]", "").toLowerCase().split(" ");
         Map<String, Integer> map = new LinkedHashMap<>(); // string -> count (linkedHashMap can keep their order)
