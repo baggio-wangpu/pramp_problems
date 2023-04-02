@@ -19,7 +19,8 @@ public class ArrayQuadruplet {
                 int lo = j + 1;
                 int hi = len - 1;
                 while(lo < hi) {
-                    int sum = arr[i] + arr[j] + arr[lo] + arr[hi];
+                    // maybe overpass Integer.MAX
+                    long sum = (long) arr[i] + arr[j] + arr[lo] + arr[hi];
                     if (sum == s) {
                         res[0] = arr[i];
                         res[1] = arr[j];
@@ -48,5 +49,9 @@ public class ArrayQuadruplet {
 
         // Expected output: []
         System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{2, 7, 4, 0, 9, 5, 1, 3}, 30)));
+
+        // Expected output: []
+        System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{1000000000,1000000000,1000000000,1000000000},
+                -294967296)));
     }
 }
