@@ -44,5 +44,8 @@ public class AwardBudgetCuts {
 
         // Expected output: 250
         System.out.println(findGrantsCap(new double[]{100, 300, 200, 400}, 800));
+
+        // Expected output: 400
+        System.out.println(findGrantsCap(new double[]{100, 300, 200, 400}, 1000));
     }
 }
