@@ -5,7 +5,7 @@ public class RootOfNumber {
         double mid = 0.0;
         while (l < r) {
             mid = (l + r) / 2;
-            if (Math.pow(mid, n) > x && Math.pow(mid, n) > 0.001) {
+            if (Math.pow(mid, n) > x && Math.pow(mid, n) - x > 0.001) {
                 r = mid;
             } else if (Math.pow(mid, n) < x && x - Math.pow(mid, n) > 0.001) {
                 l = mid;
