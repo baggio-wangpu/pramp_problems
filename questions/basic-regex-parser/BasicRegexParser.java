@@ -4,6 +4,36 @@ public class BasicRegexParser {
         same as https://leetcode.com/problems/regular-expression-matching/
         need to try another solution by DP.
      */
+    // method2: use dp
+    public static boolean isMatch(String text, String pattern) {
+        int m = text.length(), n = pattern.length();
+        boolean[][] dp = new boolean[m + 1][n + 1]; // dp[i][j]: text的前i个字符和pattern的前j个字符是否匹配
+
+        for (int i = 0; i < m + 1; i++) {
+            for (int j = 0; j < n + 1; j++) {
+                if (i == 0 && j == 0) {
+                    dp[i][j] = true;
+                } else if (j == 0) {
+                    dp[i][j] = false;
+                } else {
+                    if (pattern.charAt(j - 1) != '*') {
+                        if (i > 0) dp[i][j] = (text.charAt(i - 1) == pattern.charAt(j - 1) ||
+                                pattern.charAt(j - 1) == '.') && dp[i - 1][j - 1];
+                    } else { // '*'
+                        if (i == 0) {
+                            dp[i][j] = dp[i][j - 2];
+                        } else {
+                            dp[i][j] = dp[i][j - 2] || (text.charAt(i - 1) == pattern.charAt(j - 2) && dp[i - 1][j]) ||
+                                    (pattern.charAt(j - 2) == '.' && dp[i - 1][j]);
+                        }
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+
+    /* method1: use recursion
     static boolean isMatch(String text, String pattern) {
         if (pattern.isEmpty()) {
             return text.isEmpty();
@@ -32,6 +62,7 @@ public class BasicRegexParser {
             }
         }
     }
+     */
 
     public static void main(String[] args) {
 
