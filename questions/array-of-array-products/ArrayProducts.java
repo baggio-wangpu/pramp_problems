@@ -2,6 +2,9 @@ import java.util.Arrays;
 
 public class ArrayProducts {
     static int[] arrayOfArrayProducts(int[] arr) {
+
+        if (arr.length <= 1) return new int[]{};
+
         int[] prefix = new int[arr.length];
         int[] suffix = new int[arr.length];
         prefix[0] = 1;
@@ -29,5 +32,13 @@ public class ArrayProducts {
         int[] arr2 = {2, 7, 3, 4};
         // Expected output: {84, 24, 56, 42} by calculating {7*3*4, 2*3*4, 2*7*4, 2*7*3}
         System.out.println(Arrays.toString(arrayOfArrayProducts(arr2)));
+
+        int[] arr3 = {};
+        // Expected output: {}
+        System.out.println(Arrays.toString(arrayOfArrayProducts(arr3)));
+
+        int[] arr4 = {2};
+        // Expected output: {}
+        System.out.println(Arrays.toString(arrayOfArrayProducts(arr4)));
     }
 }
