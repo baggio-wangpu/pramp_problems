@@ -12,7 +12,10 @@ public class WordCount {
 
     // method1: O(nlogn)
     static String[][] wordCountEngine(String document) {
-        String[] arrs = document.replaceAll("[,.:;'?!]", "").toLowerCase().split(" ");
+        // String[] arrs = document.replaceAll("[,.:;'?!]", "").toLowerCase().split(" ");
+
+        String[] arrs = parser(document);
+
         Map<String, Integer> map = new LinkedHashMap<>(); // string -> count (linkedHashMap can keep their order)
 
         for (String s : arrs) {
@@ -29,6 +32,31 @@ public class WordCount {
 
         // arrays.sort() is a stable sort, so can keep their order in the original sentence
         Arrays.sort(res, (a, b) -> Integer.parseInt(b[1]) - Integer.parseInt(a[1]));
+        return res;
+    }
+
+    // input:  document = "Practice makes perfect. you'll only get Perfect by practice. just practice!"
+    /*
+        parse document by native functions
+     */
+    private static String[] parser(String document) {
+        StringBuilder sb = new StringBuilder();
+        List<String> strs = new ArrayList<>();
+        for (char c : document.toCharArray()) {
+            if (c == ' ') {
+                strs.add(sb.toString());
+                sb = new StringBuilder();
+            } else if (c >= 'A' && c <= 'z') {
+                sb.append(Character.toLowerCase(c));
+            }
+        }
+
+        if (sb.length() > 0) strs.add(sb.toString());
+
+        String[] res = new String[strs.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = strs.get(i);
+        }
         return res;
     }
 
