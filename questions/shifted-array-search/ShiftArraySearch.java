@@ -37,6 +37,7 @@ public class ShiftArraySearch {
         return -1;
     }
 
+    /* method1. find peak and then binary search each part
     static int shiftedArrSearch(int[] shiftArr, int num) {
         int highest = searchPeak(shiftArr);
         // System.out.println("peak index: " + highest);
@@ -48,6 +49,33 @@ public class ShiftArraySearch {
         } else { // if num smaller than index 0, search in second parts
             return binarySearch(shiftArr, highest + 1, shiftArr.length - 1, num);
         }
+    }
+    */
+
+    // method2, directly use binary search to find in shifted array
+    static int shiftedArrSearch(int[] shiftArr, int num) {
+        if (shiftArr.length == 0) return -1;
+
+        int first = shiftArr[0];
+        int l = 0, r = shiftArr.length - 1;
+        while (l <= r) {
+           int mid = l + (r - l) / 2;
+           if (shiftArr[mid] == num) return mid;
+           else if (shiftArr[mid] >= shiftArr[l]) {
+               if (num > shiftArr[mid] || num < shiftArr[l]) { // check whether left side(left side is ordered) can be dropped
+                   l = mid + 1;
+               } else {
+                   r = mid - 1;
+               }
+           } else {
+               if (num < shiftArr[mid] || num > shiftArr[r]) { // check whether right side(right side is ordered) can be dropped
+                   r = mid - 1;
+               } else {
+                   l = mid + 1;
+               }
+           }
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -80,5 +108,14 @@ public class ShiftArraySearch {
 
         // case 10 Expected output: -1
         System.out.println(shiftedArrSearch(new int[]{17, 2, 4, 5, 9, 12}, 18));
+
+        // case 10 Expected output: -1
+        System.out.println(shiftedArrSearch(new int[]{17}, 17));
+        System.out.println(shiftedArrSearch(new int[]{17}, 1));
+        System.out.println(shiftedArrSearch(new int[]{17}, 18));
+        System.out.println(shiftedArrSearch(new int[]{1, 2}, 1));
+        System.out.println(shiftedArrSearch(new int[]{1, 2}, 2));
+        System.out.println(shiftedArrSearch(new int[]{1, 2}, 3));
+        System.out.println(shiftedArrSearch(new int[]{1, 2}, 0));
     }
 }
